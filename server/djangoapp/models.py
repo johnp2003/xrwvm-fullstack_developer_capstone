@@ -22,7 +22,6 @@ class CarMake(models.Model):
         return self.name  # Return the name as the string representation
 
 
-
 # <HINT> Create a Car Model model `class CarModel(models.Model):`:
 # - Many-To-One relationship to Car Make model (One Car Make has many
 # Car Models, using ForeignKey field)
@@ -48,7 +47,7 @@ class CarModel(models.Model):
             MaxValueValidator(2023),
             MinValueValidator(2015)
         ])
-    dealer_id = models.IntegerField()
+    dealer_id = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.name
