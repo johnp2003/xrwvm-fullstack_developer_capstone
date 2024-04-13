@@ -51,3 +51,17 @@ class CarModel(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Dealership(models.Model):
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    address = models.CharField(max_length=255)
+    zip_code = models.CharField(max_length=20)
+    lat = models.CharField(max_length=20)
+    long = models.CharField(max_length=20)
+    short_name = models.CharField(max_length=100, blank=True, null=True)
+    full_name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.full_name
